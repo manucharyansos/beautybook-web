@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base (global) ===== */
+:root {
+  color-scheme: light;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+  "Apple Color Emoji", "Segoe UI Emoji";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #111827; /* gray-900 */
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Better focus outline */
+:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.25);
+  outline-offset: 2px;
+}
+
+/* Inputs / Buttons basic normalize */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ===== Optional: small utility layer ===== */
+@layer components {
+  .bb-container {
+    @apply mx-auto max-w-6xl px-4;
+  }
+}

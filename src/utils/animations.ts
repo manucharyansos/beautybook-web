@@ -1,0 +1,67 @@
+// src/utils/animations.ts
+import { Variants } from "framer-motion";
+
+export const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            damping: 25,
+            stiffness: 100,
+            duration: 0.6
+        }
+    }
+};
+
+export const fadeInScale: Variants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            type: "spring",
+            damping: 20,
+            stiffness: 90,
+            duration: 0.5
+        }
+    }
+};
+
+export const staggerContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+export const slideInLeft: Variants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            damping: 25,
+            stiffness: 100
+        }
+    }
+};
+
+export const slideInRight: Variants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            damping: 25,
+            stiffness: 100
+        }
+    }
+};
