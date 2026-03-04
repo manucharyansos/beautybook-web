@@ -814,7 +814,7 @@ const Navigation = ({ isScrolled, selectedType }: { isScrolled: boolean; selecte
                                           flex items-center justify-center shadow-lg shadow-[#C5A28A]/20">
                                 <span className="text-white font-light text-xl">B</span>
                             </div>
-                            <span className="text-xl font-light text-[#2C2C2C]">BeautyBook</span>
+                            <span className="text-xl font-light text-[#2C2C2C]">SmartBook</span>
                         </motion.div>
 
                         {/* Desktop Menu */}
@@ -912,7 +912,7 @@ const Navigation = ({ isScrolled, selectedType }: { isScrolled: boolean; selecte
 
                             {/* Mobile Footer */}
                             <div className="mt-8 text-center text-sm text-[#8F6B58]">
-                                <p>© 2024 BeautyBook</p>
+                                <p>© 2024 SmartBook</p>
                             </div>
                         </div>
                     </motion.div>
@@ -943,7 +943,7 @@ const Footer = () => {
             { name: 'Աջակցություն', path: '/support' }
         ],
         legal: [
-            { name: 'Գաղտնիության քաղաքականություն', path: '/privacy' },
+            { name: 'Գաղտնիության քաղաքականություն', path: '/privacy-policy' },
             { name: 'Օգտագործման պայմաններ', path: '/terms' },
             { name: 'Կուկիներ', path: '/cookies' }
         ]
@@ -968,7 +968,7 @@ const Footer = () => {
                                           flex items-center justify-center shadow-lg">
                                 <span className="text-white font-light text-2xl">B</span>
                             </div>
-                            <span className="text-2xl font-light">BeautyBook</span>
+                            <span className="text-2xl font-light">SmartBook</span>
                         </div>
                         <p className="text-[#E8D5C4] text-sm leading-relaxed font-light mb-6 max-w-md">
                             Պրեմիում լուծում գեղեցկության սրահների և դենտալ կլինիկաների համար։
@@ -1064,6 +1064,7 @@ const Footer = () => {
                             />
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
+                                onClick={() => alert('Շուտով կհասանելի լինի 🤍')}
                                 className="px-6 py-4 bg-gradient-to-r from-[#C5A28A] to-[#B88E72]
                                          rounded-r-xl flex items-center justify-center"
                             >
@@ -1077,10 +1078,10 @@ const Footer = () => {
                 <div className="pt-10 border-t border-white/10">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                         <p className="text-[#E8D5C4] text-sm">
-                            &copy; {currentYear} BeautyBook. Բոլոր իրավունքները պաշտպանված են.
+                            &copy; {currentYear} SmartBook. Բոլոր իրավունքները պաշտպանված են.
                         </p>
                         <div className="flex items-center gap-6">
-                            <button onClick={() => navigate('/privacy')} className="text-[#E8D5C4] hover:text-[#C5A28A] text-sm">
+                            <button onClick={() => navigate('/privacy-policy')} className="text-[#E8D5C4] hover:text-[#C5A28A] text-sm">
                                 Գաղտնիության քաղաքականություն
                             </button>
                             <button onClick={() => navigate('/terms')} className="text-[#E8D5C4] hover:text-[#C5A28A] text-sm">
@@ -1186,7 +1187,7 @@ export default function Landing() {
 
     const testimonials = [
         {
-            quote: "BeautyBook-ը փոխեց մեր աշխատանքի որակը։ Հաճախորդներն ավելի գոհ են, իսկ ես՝ ավելի հանգիստ։",
+            quote: "SmartBook-ը փոխեց մեր աշխատանքի որակը։ Հաճախորդներն ավելի գոհ են, իսկ ես՝ ավելի հանգիստ։",
             author: "Աննա Մարտիրոսյան",
             role: "Հիմնադիր",
             businessName: "Beauty Lab Studio",
@@ -1222,7 +1223,7 @@ export default function Landing() {
         },
         {
             q: "Կարո՞ղ եմ ինտեգրել իմ գործիքների հետ",
-            a: "Այո, մենք տրամադրում ենք API հասանելիություն, որը թույլ է տալիս ինտեգրել BeautyBook-ը Ձեր գործիքների հետ։"
+            a: "Այո, մենք տրամադրում ենք API հասանելիություն, որը թույլ է տալիս ինտեգրել SmartBook-ը Ձեր գործիքների հետ։"
         }
     ];
 
@@ -1299,7 +1300,7 @@ export default function Landing() {
                     className="mx-auto max-w-6xl text-center relative z-10"
                 >
                     <PremiumBadge className="mb-8" icon={Zap}>
-                        BeautyBook Պրեմիում 2024
+                        SmartBook Պրեմիում 2026
                     </PremiumBadge>
 
                     <motion.h1

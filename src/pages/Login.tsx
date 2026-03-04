@@ -239,6 +239,15 @@ export default function Login() {
                                     Գրանցվել
                                 </Link>
                             </p>
+
+                            <p className="mt-2 text-sm text-[#8F6B58] font-light">
+                                <Link
+                                    to="/forgot-password"
+                                    className="text-[#C5A28A] hover:text-[#B88E72] transition-colors font-light underline-offset-2 hover:underline"
+                                >
+                                    Մոռացե՞լ եք գաղտնաբառը
+                                </Link>
+                            </p>
                         </motion.div>
                     </form>
                 </motion.div>

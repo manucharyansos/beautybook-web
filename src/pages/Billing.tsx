@@ -221,8 +221,8 @@ export default function Billing() {
                     {billingQ.data && (
                         <div className="rounded-2xl border border-[#E8D5C4]/40 bg-white/80 backdrop-blur-sm p-4 text-xs text-[#8F6B58] font-light space-y-1">
                             <div className="font-normal text-[#2C2C2C] mb-1">Սրահի վիճակ</div>
-                            <div>Սրահ․ {billingQ.data.salon.name}</div>
-                            <div>Billing կարգավիճակ․ {billingQ.data.salon.billing_status || "active"}</div>
+                            <div>Սրահ․ {billingQ.data.business.name}</div>
+                            <div>Billing կարգավիճակ․ {billingQ.data.business.billing_status || "active"}</div>
                             <div>Subscription կարգավիճակ․ {billingQ.data.subscription?.status ?? "չկա"}</div>
                             {billingQ.data.reason && (
                                 <div>Reason․ {billingQ.data.reason}</div>

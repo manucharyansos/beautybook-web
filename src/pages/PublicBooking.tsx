@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import {
     createPublicBooking,
     fetchPublicAvailability,
-    fetchPublicBusiness, // փոխել fetchPublicSalon-ից
+    fetchPublicBusiness,
     fetchPublicServices,
     fetchPublicStaff,
 } from "../lib/publicApi";
@@ -57,7 +57,6 @@ export default function PublicBooking() {
     const [msg, setMsg] = useState<string | null>(null);
     const [msgType, setMsgType] = useState<"success" | "error">("success");
 
-    // Fetch business details (փոխել fetchPublicSalon-ից fetchPublicBusiness)
     const businessQ = useQuery({
         queryKey: ["public-business", slug],
         queryFn: () => fetchPublicBusiness(slug),
@@ -498,7 +497,7 @@ export default function PublicBooking() {
                     variants={fadeUp}
                     className="mt-6 text-center text-xs text-[#8F6B58] font-light"
                 >
-                    © {new Date().getFullYear()} BeautyBook - {businessQ.data?.business_type === 'dental' ? 'Դենտալ կլինիկաների' : 'Գեղեցկության սրահների'} ամրագրման համակարգ
+                    © {new Date().getFullYear()} SmartBook - {businessQ.data?.business_type === 'dental' ? 'Դենտալ կլինիկաների' : 'Գեղեցկության սրահների'} ամրագրման համակարգ
                 </motion.div>
             </motion.div>
         </div>

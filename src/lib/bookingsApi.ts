@@ -7,7 +7,7 @@ export type BookingStatus = "pending" | "confirmed" | "done" | "cancelled";
 
 export type Booking = {
     id: number;
-    business_id: number; // փոխել salon_id-ից business_id
+    business_id: number;
     service_id: number;
     staff_id: number | null;
     client_id?: number;

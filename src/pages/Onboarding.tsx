@@ -83,8 +83,8 @@ export default function Onboarding() {
     const { user, setUser } = useAuth();
 
     const bookingLink = useMemo(
-        () => `beautybook.am/b/${user?.salon_slug ?? "your-salon"}`,
-        [user?.salon_slug]
+        () => `smartbook.am/b/${user?.business_slug ?? "your-business"}`,
+        [user?.business_slug]
     );
 
     async function createServiceNext() {
@@ -184,7 +184,7 @@ export default function Onboarding() {
         setError(null);
         setSaving(true);
         try {
-            await api.post("/salon/complete-onboarding");
+            await api.post("/business/complete-onboarding");
 
             if (user) setUser({ ...user, needs_onboarding: false });
 

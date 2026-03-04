@@ -81,7 +81,7 @@ export default function Features() {
                         transition={{ delay: 0.2 }}
                         className="text-xl text-[#8F6B58] font-light"
                     >
-                        BeautyBook-ը տրամադրում է բոլոր անհրաժեշտ գործիքները
+                        SmartBook-ը տրամադրում է բոլոր անհրաժեշտ գործիքները
                     </motion.p>
                 </div>
             </section>
@@ -147,7 +147,7 @@ export default function Features() {
                             Պատրա՞ստ եք սկսել
                         </h3>
                         <p className="text-lg text-[#8F6B58] mb-8">
-                            Միացեք 500+ բիզնեսների, որոնք արդեն օգտվում են BeautyBook-ից
+                            Միացեք 500+ բիզնեսների, որոնք արդեն օգտվում են SmartBook-ից
                         </p>
                         <Link
                             to="/register"

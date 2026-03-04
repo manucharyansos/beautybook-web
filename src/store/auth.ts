@@ -1,47 +1,58 @@
-// src/store/auth.ts
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface User {
+export type User = {
     id: number;
     name: string;
     email: string;
-    role: 'owner' | 'manager' | 'staff' | 'super_admin';
-    business_id: number; // փոխել salon_id-ից business_id
-    business_slug?: string;
-    business_type?: 'beauty' | 'dental';
-    needs_onboarding: boolean;
-}
+    role: string;
+    business_id: number | null;
+    business_slug?: string | null;
+    business_type?: string | null;
+    billing_status?: string;
+    is_billable?: boolean;
+    needs_onboarding?: boolean;
+};
 
-interface AuthState {
-    user: User | null;
+type AuthState = {
     token: string | null;
+    user: User | null;
+
+    /** Storage hydration flag (used by route guards). */
     bootstrapped: boolean;
+
+    setToken: (token: string | null) => void;
+    setUser: (user: User | null) => void;
     setAuth: (token: string, user: User) => void;
-    logout: () => void;
-    setBootstrapped: (value: boolean) => void;
-}
+    clear: () => void;
+
+    /** Backwards compatibility for older guards that call it manually. */
+    bootstrapFromStorage: () => void;
+};
 
 export const useAuth = create<AuthState>()(
     persist(
-        (set) => ({
-            user: null,
+        (set, get) => ({
             token: null,
-            bootstrapped: true,
-            setAuth: (token, user) => set({ token, user, bootstrapped: true }),
-            logout: () => {
-                localStorage.removeItem("token");
-                localStorage.removeItem("user");
-                set({ token: null, user: null, bootstrapped: true });
+            user: null,
+            bootstrapped: false,
+
+            setToken: (token) => set({ token }),
+            setUser: (user) => set({ user }),
+            setAuth: (token, user) => set({ token, user }),
+            clear: () => set({ token: null, user: null }),
+
+            bootstrapFromStorage: () => {
+                if (!get().bootstrapped) set({ bootstrapped: true });
             },
-            setBootstrapped: (value) => set({ bootstrapped: value }),
         }),
         {
-            name: "auth-storage",
-            partialize: (state) => ({
-                token: state.token,
-                user: state.user
-            }),
+            name: "bb_auth",
+            partialize: (s) => ({ token: s.token, user: s.user }),
+            onRehydrateStorage: () => (state) => {
+                // Zustand rehydrates automatically; we just flip the flag.
+                state?.bootstrapFromStorage?.();
+            },
         }
     )
 );

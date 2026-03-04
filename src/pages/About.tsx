@@ -331,7 +331,7 @@ export default function About() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="mt-8 text-lg sm:text-xl text-[#8F6B58] max-w-3xl mx-auto font-light leading-relaxed"
                     >
-                        BeautyBook-ը ստեղծվել է գեղեցկության սրահների համար՝
+                        SmartBook-ը ստեղծվել է գեղեցկության սրահների համար՝
                         ամրագրումները ավտոմատացնելու, աշխատակիցներին կառավարելու և
                         սրահի աշխատանքը դարձնելու պարզ ու վերահսկելի։
                     </motion.p>
@@ -407,7 +407,7 @@ export default function About() {
                             index={0}
                             year="2023"
                             title="Գաղափարի ծնունդ"
-                            description="BeautyBook-ի գաղափարը ծնվեց սրահների հետ զրույցներից, որտեղ հասկացանք, որ նրանք կարիք ունեն պարզ և արդյունավետ համակարգի։"
+                            description="SmartBook-ի գաղափարը ծնվեց սրահների հետ զրույցներից, որտեղ հասկացանք, որ նրանք կարիք ունեն պարզ և արդյունավետ համակարգի։"
                         />
                         <TimelineItem
                             index={1}

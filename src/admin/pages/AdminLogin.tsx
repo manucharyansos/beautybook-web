@@ -73,7 +73,7 @@ export default function AdminLogin() {
                 <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
                     <div className="text-center mb-8">
                         <h1 className="text-3xl font-light text-white mb-2">Ադմինի մուտք</h1>
-                        <p className="text-white/60">BeautyBook Կառավարում</p>
+                        <p className="text-white/60">SmartBook Կառավարում</p>
                     </div>
 
                     {error && (
@@ -99,7 +99,7 @@ export default function AdminLogin() {
                                     className={`w-full pl-11 pr-4 py-3 bg-white/5 border rounded-xl 
                                              text-white placeholder-white/40 focus:outline-none
                                              ${validationErrors.email ? 'border-red-500' : 'border-white/10 focus:border-white/30'}`}
-                                    placeholder="admin@beautybook.am"
+                                    placeholder="admin@smartbook.am"
                                     required
                                 />
                             </div>
@@ -147,7 +147,7 @@ export default function AdminLogin() {
                     </form>
 
                     <div className="mt-4 text-xs text-white/30 text-center">
-                        Demo: super@beautybook.am / password
+                        Demo: super@smartbook.am / password
                     </div>
                 </div>
             </motion.div>

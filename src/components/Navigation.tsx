@@ -1,4 +1,3 @@
-// components/Navigation.tsx
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -12,8 +11,7 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ isScrolled, selectedType }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
-    const navigate = useNavigate();
-
+    useNavigate();
     const navItems = [
         { name: 'Գլխավոր', path: '/' },
         { name: 'Առանձնահատկություններ', path: '/features' },
@@ -25,7 +23,6 @@ const Navigation: React.FC<NavigationProps> = ({ isScrolled, selectedType }) => 
         return location.pathname === path;
     };
 
-    // Ստանալ business type URL-ից կամ localStorage-ից
     const getBusinessType = () => {
         const params = new URLSearchParams(location.search);
         const typeFromUrl = params.get('type');
@@ -64,7 +61,7 @@ const Navigation: React.FC<NavigationProps> = ({ isScrolled, selectedType }) => 
                                 <Sparkles size={20} className="text-white" />
                             </motion.div>
                             <span className="text-xl font-light text-[#2C2C2C] group-hover:text-[#C5A28A] transition-colors">
-                BeautyBook
+                SmartBook
               </span>
                         </Link>
 
@@ -197,7 +194,7 @@ const Navigation: React.FC<NavigationProps> = ({ isScrolled, selectedType }) => 
 
                         {/* Mobile Footer */}
                         <div className="mt-8 text-center text-sm text-[#8F6B58]">
-                            <p>© 2024 BeautyBook</p>
+                            <p>© 2024 SmartBook</p>
                         </div>
                     </div>
                 </motion.div>

@@ -1,7 +1,6 @@
-// src/lib/settingsApi.ts
 import { api } from "./api";
 
-export type BusinessSettings = { // փոխել SalonSettings-ից BusinessSettings
+export type BusinessSettings = {
     name: string;
     slug: string;
     business_type: 'beauty' | 'dental';
@@ -15,7 +14,7 @@ export type BusinessSettings = { // փոխել SalonSettings-ից BusinessSettin
 };
 
 export async function fetchBusinessSettings(): Promise<BusinessSettings> {
-    const r = await api.get("/business/settings"); // փոխել /salon/settings-ից /business/settings
+    const r = await api.get("/business/settings");
     return r.data.data;
 }
 

@@ -1,7 +1,7 @@
 // src/lib/publicApi.ts
 import { api } from "./api";
 
-export type PublicBusiness = { // փոխել PublicSalon-ից PublicBusiness
+export type PublicBusiness = {
     id: number;
     name: string;
     slug: string;
@@ -36,7 +36,6 @@ export type Slot = {
     available_rooms?: any[];
 };
 
-// GET /public/businesses/{slug} - փոխել salons-ից businesses
 export async function fetchPublicBusiness(slug: string): Promise<PublicBusiness> {
     const { data } = await api.get(`/public/businesses/${slug}`);
     return data;

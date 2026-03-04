@@ -45,22 +45,22 @@ export type StaffStats = {
     currency: string;
 };
 
-export async function fetchAnalyticsOverview(): Promise<AnalyticsOverview> {
-    const { data } = await api.get("/analytics/overview");
-    return data.data;
+export async function fetchAnalyticsOverview() {
+  const r = await api.get("/analytics/overview");
+  return r.data.data ?? r.data;
 }
 
-export async function fetchRevenue(months = 12): Promise<RevenueData> {
-    const { data } = await api.get("/analytics/revenue", { params: { months } });
-    return data.data;
+export async function fetchRevenue(months: number) {
+  const r = await api.get("/analytics/revenue", { params: { months } });
+  return r.data.data ?? r.data;
 }
 
-export async function fetchServiceStats(): Promise<ServiceStats> {
-    const { data } = await api.get("/analytics/services");
-    return data.data;
+export async function fetchServiceStats() {
+  const r = await api.get("/analytics/services");
+  return r.data.data ?? r.data;
 }
 
-export async function fetchStaffStats(): Promise<StaffStats> {
-    const { data } = await api.get("/analytics/staff");
-    return data.data;
+export async function fetchStaffStats() {
+  const r = await api.get("/analytics/staff");
+  return r.data.data ?? r.data;
 }

@@ -50,3 +50,18 @@ textarea {
     @apply mx-auto max-w-6xl px-4;
   }
 }
+
+/* Calendar blocks - production look */
+.sc-block-bg {
+  background: rgba(250, 204, 21, 0.18) !important; /* soft yellow */
+}
+
+.sc-block {
+  background: rgba(250, 204, 21, 0.85) !important;
+  border: 1px solid rgba(161, 98, 7, 0.45) !important;
+  color: #3f2a00 !important;
+  border-radius: 10px !important;
+  padding: 2px 6px !important;
+  font-size: 12px !important;
+  line-height: 1.15 !important;
+}

@@ -9,10 +9,20 @@ export type Block = {
 };
 
 export async function fetchBlocks(from: string, to: string, staff_id?: number) {
-    const r = await api.get("/calendar/blocks", {
-        params: { from, to, ...(staff_id ? { staff_id } : {}) },
-    });
-    return (r.data.data ?? r.data ?? []) as Block[];
+    try {
+        const r = await api.get("/calendar/blocks", {
+            params: { from, to, ...(staff_id ? { staff_id } : {}) },
+        });
+        return (r.data.data ?? r.data ?? []) as Block[];
+    } catch (err: any) {
+        const status = err?.response?.status;
+        const code = err?.response?.data?.code;
+        // ✅ If the plan does not include "blocks", just behave as if there are no blocks.
+        if (status === 403 && code === "feature_not_allowed") {
+            return [];
+        }
+        throw err;
+    }
 }
 
 export async function createBlock(payload: {

@@ -55,6 +55,11 @@ function statusLabel(status: string) {
                 t: "Կատարված",
                 cls: "bg-gradient-to-r from-green-50/80 to-emerald-50/80 text-green-800 border-green-200/50"
             };
+        case "done":
+            return {
+                t: "Կատարված",
+                cls: "bg-gradient-to-r from-green-50/80 to-emerald-50/80 text-green-800 border-green-200/50"
+            };
         case "cancelled":
             return {
                 t: "Չեղարկված",
